@@ -1,0 +1,80 @@
+@import '../../../variables.scss';
+
+@mixin responsive-containerInside{
+    @media (max-width: 768px){
+        width: 90%;
+
+        p, h3{
+            text-align: inherit;
+        }
+    }
+}
+
+.containerBack{
+    font-family: 'Roboto';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+
+.containerInside{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 279px;
+    background-color: $light-color;
+    border-radius: 10px;
+    padding: 30px;
+
+    p, h3{
+        text-align: center;
+        font-size: 24px;
+    }
+
+    h3{
+        font-weight: normal;
+    }
+
+    p{
+        font-weight: 600;
+    }
+
+    .svgClose{
+        position: absolute;
+        cursor: pointer;
+        align-self: flex-end;
+        color: $primary-color-dark;
+        width: 25px;
+        height: 25px;
+    }
+
+    @include responsive-containerInside;
+}
+
+.content{
+    display: flex;
+    width: 100%;
+    height: 93%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btnConfirm{    
+        color: $light-color;
+        background-color: $primary-color-dark;
+        font-size: 20px;
+        border-radius: 8px;
+        width: 136px;
+        height: 46px;
+        margin-top: 180px;
+        font-family: 'Roboto Slab';
+        position: absolute;
+    }
+}

@@ -1,0 +1,70 @@
+@import '../../variables.scss';
+
+.containerMain{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 200px;
+    max-width: 1300px;
+    width: 1300px;
+    height: auto;
+}
+
+.containerHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Roboto Slab';
+    
+    button{
+        padding: 10px 20px;
+        color: $light-color;
+        background-color: $primary-color;
+        border-radius: 10px;
+        border: 0;
+        font-family: 'Roboto Slab';
+        font-size: 20px;
+    }
+}
+
+.containerCards{
+    display: flex;
+    flex-direction: row;
+    gap: 40px 22px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+
+    .containerCard{
+        display: flex;
+        flex-direction: column;
+
+        .day{
+            font-family: 'Roboto Slab';
+        }
+    }
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 308px;
+    height: 120px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    color: $light-color;
+    background-color: $primary-color-dark;
+    cursor: pointer;
+
+    a{
+        align-self: flex-end;
+        transform: translate(25%);
+        margin: 0 auto;
+        font-weight: 700;
+    }
+
+    p{
+        font-size: 20px;
+    }
+}
