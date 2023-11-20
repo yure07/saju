@@ -13,10 +13,11 @@ const Plantao = () => {
         // pegar elementos para passar como parametros
         const cardElement = e.currentTarget.querySelector(`.${styles.card}`);
         
-        const h4Element = cardElement.querySelector('h4').innerHTML; 
-        const pElement = cardElement.querySelector('p').innerHTML;
+        const tsDuty = cardElement.querySelector('h4').innerHTML; 
+        const hourDuty = cardElement.querySelector('p').innerHTML;
+        const dayDuty = e.currentTarget.firstElementChild.innerHTML
 
-        const paramsToPass = [h4Element, pElement]
+        const paramsToPass = [tsDuty, dayDuty, hourDuty]
 
         setParamsLink(paramsToPass)
     }

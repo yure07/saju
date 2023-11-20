@@ -11,10 +11,16 @@
 
 .infoDutyHeader{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
+    flex-direction: column;
     margin-top: 40px;
+    font-family: 'Roboto';
+    
+    .tags{
+        display: flex;
+        flex-direction: row;
+        column-gap: 40px;
+        margin-bottom: 20px;
+    }
 
     div{
         display: flex;
@@ -24,7 +30,6 @@
         color: $light-color;
         padding: 10px 15px;
         border-radius: 20px;
-        font-family: 'Roboto';
     }
 
     svg{

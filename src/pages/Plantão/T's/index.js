@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom"
 import { FiTag } from "react-icons/fi";
 import { IoIosCalendar } from "react-icons/io";
@@ -9,29 +8,24 @@ import styles from './Ts.module.scss'
 
 const Ts = () => {
     const {params} = useParams()
-    console.log(params)
-    console.log(typeof(params))
+    const infoDuty = params.split(',')
 
     return(
         <>
             <Header/>
             <main className={styles.containerMain}>
                 <h3>Plantão</h3>
-                <section className={styles.infoDutyHeader}>
-                     
-                    <div>
-                        <FiTag/>
-                        <h4>TA</h4>
-                    </div>
-                    <div>
-                        <IoIosCalendar/>
-                        <h4>Segunda-feira</h4>
-                    </div>
-                    <div>
-                        <LuClock3/>
-                        <h4>14:00-17:00</h4>
-                    </div>
-                </section>
+                <article className={styles.infoDutyHeader}>
+                    <section className={styles.tags}>
+                        {infoDuty.map((info, index) => (
+                            <div key={index}>
+                                {index === 0 ? <FiTag/> : index === 1 ? <IoIosCalendar/> : <LuClock3/>}
+                                <h4>{info}</h4>
+                            </div>
+                        ))}
+                    </section>
+                    <h4>Coordenador: João Carlos Mercês Almeida dos Santos</h4>
+                </article>
             </main>
             <Footer/>
         </>
