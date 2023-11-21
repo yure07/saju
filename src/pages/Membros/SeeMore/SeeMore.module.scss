@@ -336,9 +336,14 @@
         justify-content: space-between;
     }
 
-    .btnEdit{
-        width: 221px;
-        height: 46px;
+    .areaBtn{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        column-gap: 20px;
+    }
+
+    .btnEdit, .btnBack{
         margin: 50px auto 0;
         font-size: 20px;
         font-family: 'Roboto Slab';
@@ -347,6 +352,11 @@
         border: 0;
         background-color: $primary-color;
         color: $light-color;
+    }
+
+    .btnEdit{
+        width: 221px;
+        height: 46px;
     }
 
     @include responsive-containerComissions;

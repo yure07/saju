@@ -126,7 +126,10 @@ const SeeMoreMember = () => {
                             <p>Até: o momento</p>
                         </div> 
                     </section>
-                    <button className={styles.btnEdit}> <Link to="/membros/editar"> Editar informações </Link> </button>
+                    <section className={styles.areaBtn}>
+                        <button className={styles.btnEdit}> <Link to="/membros/editar"> Editar informações </Link> </button>
+                        <button className={styles.btnBack}> <Link to="/membros">Voltar</Link> </button>
+                    </section>
                 </article>
             </main>
             <Footer/>
