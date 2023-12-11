@@ -9,10 +9,10 @@
             font-size: 20px;
             text-align: center;
         }
-
+        
         button{
-           width: 275px; 
-           height: 40px;
+            width: 275px; 
+            height: 40px;
         }
     }
 }
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     font-family: 'Roboto';
-
+    
 }
 
 .containerContent{
@@ -52,18 +52,19 @@
         font-weight: 700;
         font-size: 24px;
     }
-
+    
     button{
         background-color: $primary-color-dark;
         width: 377px;
         height: 40px;
         border-radius: 5px;
         border: none;
+        font-family: 'Roboto';
         font-size: 16px;
         font-weight: 700;
         
         a{color: $light-color;}
     }
-
+    
     @include responsive-tablet-mobile-containerContent;
 }

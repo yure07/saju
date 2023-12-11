@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { InputMask } from 'primereact/inputmask';
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import styles from './Plantao.module.scss'
 
 const Plantao = () => {
     const [paramsLink, setParamsLink] = useState([])
+    const [addDuty, setAddDuty] = useState(false)
     const navigate = useNavigate()
 
     const handleClick = (e) => {
@@ -32,7 +34,7 @@ const Plantao = () => {
                 <main className={styles.containerMain}>
                     <section className={styles.containerHeader}>
                         <h3>Plantão</h3>
-                        <button>Novo plantão</button>
+                        <button onClick={() => setAddDuty(!addDuty)}>Novo plantão</button>
                     </section>
                     <article className={styles.containerCards}>
                         <section className={styles.containerCard} onClick={(e) => handleClick(e)}>
@@ -92,6 +94,22 @@ const Plantao = () => {
                             </div>
                         </section>
                     </article>
+                    {addDuty ? (
+                        <article className={styles.addDuty}>
+                            <h4>Dados do Plantão</h4>
+                            <section className={styles.areaForm}>
+                                <input type="text" placeholder="Identificador"/>
+                                <input type="text" placeholder="Dia da semana"/>
+                                <InputMask mask="99:99" placeholder="Horário de entrada"/>
+                                <InputMask mask="99:99" placeholder="Horário de saída"/>
+                                <input type="text" placeholder="Coordenador" className={styles.coordinator}/>
+                            </section>
+                            <section className={styles.areaBtn}>
+                                <button onClick={() => setAddDuty(!addDuty)}>Confirmar</button>
+                                <button onClick={() => setAddDuty(!addDuty)}>Cancelar</button>
+                            </section>
+                        </article>
+                    ) : <></>}
                 </main>
             <Footer/>
         </>
