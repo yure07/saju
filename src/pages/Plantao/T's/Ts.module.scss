@@ -159,9 +159,55 @@
         font-weight: 700;
     }
 
+    button.saveDuty{
+        background-color: $primary-color;
+        color: $light-color;
+    }
+
     svg{
        width: 25px; 
        height: 25px;
        margin-right: 8px;
     }
+}
+
+.containerEditDuty{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 40px;    
+}
+
+.containerInputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .labelInput{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto';
+
+        span{
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            margin-left: 15px;
+        }
+
+        input{
+            width: 200px;
+            height: 50px;
+            border: 1px solid #777;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 0 15px;
+        }
+
+        .inputCoordinator{
+            width: 400px;
+        }
+    }
+
 }

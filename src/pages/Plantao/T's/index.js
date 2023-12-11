@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom"
+import { InputMask } from 'primereact/inputmask';
 import { FiTag } from "react-icons/fi";
 import { IoIosCalendar, IoMdTrash } from "react-icons/io";
 import { LuClock3 } from "react-icons/lu";
 import { TiArrowBack } from "react-icons/ti";
 import { MdModeEditOutline, MdAddBox } from "react-icons/md";
 import { BsArrowReturnRight } from "react-icons/bs";
+import { HiMiniDocumentCheck } from "react-icons/hi2";
 import Header from "../../../components/Header"
 import Footer from "../../../components/Footer"
 import styles from './Ts.module.scss'
 
 const Ts = () => {
-    const [seeAssistidos, setSeeAssistidos] = useState(false)
+    const [showAssistidos, setShowAssistidos] = useState(false)
+    const [showEditDuty, setShowEditDuty] = useState(false)
     const {params} = useParams()
     const infoDuty = params.split(',')
 
@@ -46,7 +49,7 @@ const Ts = () => {
                             <h6 className={styles.monitorTitle}>Monitor</h6>
                             <p className={styles.contentMonitor}>Nenhum monitor vinculado</p>
 
-                            {seeAssistidos ? (
+                            {showAssistidos ? (
                                 <>
                                     <h6 className={styles.assistidosTitle}>Assistidos</h6>
                                     <p>Ariadna Violeta Quintana Vasques de Souza</p>
@@ -60,8 +63,8 @@ const Ts = () => {
                         <div className={styles.areaBtns}>
                             <button 
                             className={styles.btnsCard} 
-                            onClick={() => setSeeAssistidos(!seeAssistidos)}>
-                                {seeAssistidos ? <> Ver menos </> : <> Ver assistidos </>}</button>
+                            onClick={() => setShowAssistidos(!showAssistidos)}>
+                                {showAssistidos ? <> Ver menos </> : <> Ver assistidos </>}</button>
                             <button className={styles.btnsCard}>Editar</button>
                         </div>
                     </section>
@@ -114,10 +117,39 @@ const Ts = () => {
                         </div>
                     </section>
                 </article>
+                {showEditDuty && (
+                    <article className={styles.containerEditDuty}>
+                        <h4>Dados do Plantão</h4>
+                        <section className={styles.containerInputs}>
+                            <label className={styles.labelInput}>
+                                <span>Identificador</span>
+                                <input type="text" placeholder="TA"/>
+                            </label>
+                            <label className={styles.labelInput}>
+                                <span>Dia da semana</span>
+                                <input type="text" placeholder="Segunda-feira"/>
+                            </label>
+                            <label className={styles.labelInput}>
+                                <span>Horário de entrada</span>
+                                <InputMask type placeholder="14:00" mask="99:99"/>
+                            </label>
+                            <label className={styles.labelInput}>
+                                <span>Horário de saída</span>
+                                <InputMask type="text" placeholder="17:00" mask="99:99"/>
+                            </label>
+                            <label className={styles.labelInput}>
+                                <span>Coordenador</span>
+                                <input type="text" placeholder="João Carlos Mercês Almeida dos Santos" className={styles.inputCoordinator}/>
+                            </label>
+                        </section>
+                    </article>
+                )}
                 <article className={styles.containerButtons}>
                     <button> <TiArrowBack/> Voltar</button>
                     <button> <MdAddBox/> Adicionar Triunvirato</button>
-                    <button> <MdModeEditOutline/> Editar</button>
+                    <button onClick={() => setShowEditDuty(!showEditDuty)} className={ showEditDuty && styles.saveDuty}> 
+                        {showEditDuty ? (<> <HiMiniDocumentCheck/> Salvar </>) : (<> <MdModeEditOutline/> Editar </>)} 
+                    </button>
                     <button> <IoMdTrash/>Excluir</button>
                 </article>
             </main>
