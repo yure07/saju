@@ -14,7 +14,7 @@ const EditMember = () => {
                     <section className={styles.sectionForm}>
                         <h4>Dados pessoais</h4>
                         <form className={styles.formPersonal}>
-                        <label className={styles.inputFull}>
+                            <label className={styles.inputFull}>
                                 <span>Nome</span>
                                 <input type="text" placeholder="Nome Sobrenome Sobrenome"/>
                             </label>

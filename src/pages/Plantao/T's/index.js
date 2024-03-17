@@ -82,6 +82,25 @@ const Ts = () => {
                             <button className={styles.btnsCard}>Editar</button>
                         </div>
                     </section>
+                    {/* <section className={styles.containerEditTriunvirate}>
+                        <h4>TA-2</h4>
+                        <form className={styles.areaInputEditTriunvirate}>
+                            <label className={styles.labelInputSajuano}>
+                                <p>Sajuano</p>
+                                <input type="text" placeholder="Márcia Barros Abreu Dantas Gusmão"/>
+                                <button>Adicionar Sajuano</button>
+                            </label>
+                            <label className={styles.labelInputMonitor}>
+                                <p>Monitor</p>
+                                <input type="text" placeholder="Luna Maria Carla da Cruz" className={styles.inputMonitor}/>
+                                <span>
+                                    <span>OAB</span>  
+                                    <input type="text" placeholder="789123/BA" className={styles.inputOab}/>
+                                    <button>Adicionar Monitor</button>
+                                </span>
+                            </label>
+                        </form>
+                    </section> */}
                     <section className={styles.detailsTriunvirateCard}>
                         <h4 className={styles.tagTs}>TA-3</h4>
                         <div className={styles.contentCard}>

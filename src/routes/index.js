@@ -6,9 +6,9 @@ import RecoverPassword from "../pages/RecuperarSenha";
 import Plantao from "../pages/Plantao";
 import Ts from "../pages/Plantao/T's";
 import Membros from "../pages/Membros";
-import RegisterMember from "../pages/Membros/Register";
-import SeeMoreMember from "../pages/Membros/SeeMore";
-import EditMember from "../pages/Membros/Edit";
+import RegistrarMembro from "../pages/Membros/Registrar";
+import VerMaisMembro from "../pages/Membros/VerMais";
+import EditarMembro from "../pages/Membros/Editar";
 
 const RoutesApp = () => {
     return(
@@ -18,9 +18,9 @@ const RoutesApp = () => {
         <Route path="/plantao" element={<Plantao/>}/>
             <Route path="/plantao/:params" element={<Ts/>}/>
         <Route path="/membros" element={<Membros/>}/>
-            <Route path="/membros/novo" element={<RegisterMember/>}/>
-            <Route path="/membros/ver-mais" element={<SeeMoreMember/>}/>
-            <Route path="/membros/editar" element={<EditMember/>}/>
+            <Route path="/membros/novo" element={<RegistrarMembro/>}/>
+            <Route path="/membros/ver-mais" element={<VerMaisMembro/>}/>
+            <Route path="/membros/editar" element={<EditarMembro/>}/>
     </Routes>
     )
 }
