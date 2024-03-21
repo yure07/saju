@@ -1,5 +1,18 @@
 @import '../../variables.scss';
 
+@mixin reponsive-cotainerMain{
+    @media (max-width: 1300px){
+        width: 90%;
+    }
+}
+
+@mixin responsive-containerCards{
+    @media (max-width: 768px) {
+        width: 308px;
+        align-self: center;
+    }
+}
+
 button{
     padding: 10px 20px;
     color: $light-color;
@@ -17,6 +30,8 @@ button{
     max-width: 1300px;
     width: 1300px;
     height: auto;
+
+    @include reponsive-cotainerMain
 }
 
 .containerHeader{
@@ -25,7 +40,6 @@ button{
     justify-content: space-between;
     width: 100%;
     font-family: 'Roboto Slab';
-    
 }
 
 .containerCards{
@@ -44,6 +58,8 @@ button{
             font-family: 'Roboto Slab';
         }
     }
+
+    @include responsive-containerCards;
 }
 
 .card{

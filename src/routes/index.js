@@ -9,6 +9,7 @@ import Membros from "../pages/Membros";
 import RegistrarMembro from "../pages/Membros/Registrar";
 import VerMaisMembro from "../pages/Membros/VerMais";
 import EditarMembro from "../pages/Membros/Editar";
+import Comissao from "../pages/Comissão";
 
 const RoutesApp = () => {
     return(
@@ -16,6 +17,7 @@ const RoutesApp = () => {
         <Route path="/" element={<Login/>}/>        
         <Route path="/recuperar-senha" element={<RecoverPassword/>}/>
         <Route path="/plantao" element={<Plantao/>}/>
+        <Route path="/comissao" element={<Comissao/>}/>
             <Route path="/plantao/:params" element={<Ts/>}/>
         <Route path="/membros" element={<Membros/>}/>
             <Route path="/membros/novo" element={<RegistrarMembro/>}/>

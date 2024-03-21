@@ -10,7 +10,7 @@ const Header = () => {
             <nav className={styles.navLinks}>
                 <Link to="/membros">Membros</Link>
                 <Link to="/plantao">Plantão</Link>
-                <a>Comissão</a>
+                <Link to="/comissao">Comissão</Link>
                 <a>Ficha de Presença</a>
                 <a>Triunvirato</a>
                 <a>Assistido</a>
