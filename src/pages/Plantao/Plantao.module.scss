@@ -13,6 +13,34 @@
     }
 }
 
+@mixin responsive-addDuty{
+    @media (max-width: 1300px){
+        .areaForm{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 20px;
+        }
+    }
+
+    @media (max-width: 1010px){
+        .areaForm{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+
+    @media (max-width: 768px){
+        .areaForm{
+            display: flex;
+            flex-direction: column;
+
+            input.coordinator{
+                width: 100%;
+            }
+        }
+    }
+}
+
 button{
     padding: 10px 20px;
     color: $light-color;
@@ -26,7 +54,7 @@ button{
 .containerMain{
     display: flex;
     flex-direction: column;
-    margin: 50px auto 200px;
+    margin: 50px auto 100px;
     max-width: 1300px;
     width: 1300px;
     height: auto;
@@ -48,7 +76,7 @@ button{
     gap: 40px 22px;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 32px;
 
     .containerCard{
         display: flex;
@@ -100,6 +128,8 @@ button{
         margin: 40px auto;
         column-gap: 10px;
     }
+
+    @include responsive-addDuty;
 }
 
 .areaForm{

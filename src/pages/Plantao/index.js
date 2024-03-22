@@ -36,6 +36,22 @@ const Plantao = () => {
                         <h3>Plantão</h3>
                         <button onClick={() => setAddDuty(!addDuty)}>Novo plantão</button>
                     </section>
+                    {addDuty && (
+                        <article className={styles.addDuty}>
+                            <h4>Dados do Plantão</h4>
+                            <section className={styles.areaForm}>
+                                <input type="text" placeholder="Identificador"/>
+                                <input type="text" placeholder="Dia da semana"/>
+                                <InputMask mask="99:99" placeholder="Horário de entrada"/>
+                                <InputMask mask="99:99" placeholder="Horário de saída"/>
+                                <input type="text" placeholder="Coordenador" className={styles.coordinator}/>
+                            </section>
+                            <section className={styles.areaBtn}>
+                                <button onClick={() => setAddDuty(!addDuty)}>Confirmar</button>
+                                <button onClick={() => setAddDuty(!addDuty)}>Cancelar</button>
+                            </section>
+                        </article>
+                    )}
                     <article className={styles.containerCards}>
                         <section className={styles.containerCard} onClick={(e) => handleClick(e)}>
                             <h4 className={styles.day}>Segunda-feira</h4>
@@ -94,22 +110,6 @@ const Plantao = () => {
                             </div>
                         </section>
                     </article>
-                    {addDuty ? (
-                        <article className={styles.addDuty}>
-                            <h4>Dados do Plantão</h4>
-                            <section className={styles.areaForm}>
-                                <input type="text" placeholder="Identificador"/>
-                                <input type="text" placeholder="Dia da semana"/>
-                                <InputMask mask="99:99" placeholder="Horário de entrada"/>
-                                <InputMask mask="99:99" placeholder="Horário de saída"/>
-                                <input type="text" placeholder="Coordenador" className={styles.coordinator}/>
-                            </section>
-                            <section className={styles.areaBtn}>
-                                <button onClick={() => setAddDuty(!addDuty)}>Confirmar</button>
-                                <button onClick={() => setAddDuty(!addDuty)}>Cancelar</button>
-                            </section>
-                        </article>
-                    ) : <></>}
                 </main>
             <Footer/>
         </>
